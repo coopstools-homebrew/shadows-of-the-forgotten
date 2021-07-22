@@ -12,8 +12,13 @@ import (
 var table = persistance.Connect()
 
 func main() {
+	prefix := ""
+	if len(os.Args) > 2 {
+		prefix = "/" + os.Args[2]
+	}
+
 	mux := http.NewServeMux()
-	mux.HandleFunc("/person", GetData)
+	mux.HandleFunc(prefix + "/person", GetData)
 	handler := logRequestHandler(mux)
 	handler = cors.New(cors.Options{
 		AllowedOrigins: []string{"http://localhost:*", "https://home.coopstools.com"},

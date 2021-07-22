@@ -7,4 +7,4 @@ FROM debian:buster-slim
 WORKDIR /home/app
 COPY --from=base /go/src/api /home/app/api
 USER root:root
-CMD ./api $PORT
+CMD ./api $PORT $URL_PATH_PREFIX
