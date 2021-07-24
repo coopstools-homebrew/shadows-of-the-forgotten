@@ -1,4 +1,4 @@
-module github.com/coopstools-homebrew/users_api
+module github.com/coopstools-homebrew/shadows-of-the-forgotten
 
 go 1.17
 

@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/coopstools-homebrew/users_api/persistance"
+	"github.com/coopstools-homebrew/shadows-of-the-forgotten/persistance"
 	"github.com/rs/cors"
 	"net/http"
 	"os"
@@ -18,7 +18,7 @@ func main() {
 	}
 
 	mux := http.NewServeMux()
-	mux.HandleFunc(prefix + "/person", GetData)
+	mux.HandleFunc(prefix + "/", GetData)
 	handler := logRequestHandler(mux)
 	handler = cors.New(cors.Options{
 		AllowedOrigins: []string{"http://localhost:*", "https://home.coopstools.com"},

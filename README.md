@@ -1,5 +1,5 @@
-# users_api
-A simple api, written in golang, for testing a CI/CD pipeline
+# Shadows of the forgotten
+There are those who lurk, and wish to be unknown. Their names are written in encrypted tomes (database). This portal, a shimmer at the edge of the fey, (api in golang) is there one last thread holding them to the world of mortals.
 
 ## Tagging
 I'm using a prebuilt tagging action that uses an angular standard syntax. A tag will be created by bumping a value from a previous tag if the commit message follows a set pattern:
@@ -8,4 +8,4 @@ I'm using a prebuilt tagging action that uses an angular standard syntax. A tag 
 
 `feat(pencil): ...` <- minor (non-breaking) change
 
-`perf(pencil): ...` <- major (breaking) change
+`break(pencil): ...` <- major (breaking) change

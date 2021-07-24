@@ -9,5 +9,11 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Run go tests
-        run: cd src && go test ./...
+      - name: Build and Push image
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: ${{ github.event.repository.name }}
+          tags: test
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
