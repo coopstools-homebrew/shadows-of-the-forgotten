@@ -21,7 +21,11 @@ func main() {
 	mux.HandleFunc(prefix + "/", GetData)
 	handler := logRequestHandler(mux)
 	handler = cors.New(cors.Options{
-		AllowedOrigins: []string{"http://localhost:*", "https://home.coopstools.com"},
+		AllowedOrigins: []string{
+			"http://localhost:*",
+			"https://home.coopstools.com",
+			"http://home.coopstools.com",
+		},
 	}).Handler(handler)
 	addr := ":" + os.Args[1]
 	fmt.Println(addr)
